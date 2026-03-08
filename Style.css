@@ -1,0 +1,83 @@
+  body {
+  font-family: 'Poppins', sans-serif;
+      background:#f4f6fb;
+}
+:root{
+  --main-purple:#5A189A;
+}
+
+
+h1,h2,h3{
+  color:var(--main-purple);
+}
+.slide{
+  min-height: calc(100vh - 100px); /* 200px = height ديال header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: 100%;
+  max-width: 80%;
+  height: 70vh;
+}
+.btn-primary {
+  background: #7b2cbf;
+  border: none;
+}
+.card{
+  height: 100%;
+}
+.controls{
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+}
+.my-header {
+  background: linear-gradient(135deg, #6a0dad, #9b4dff);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+
+
+
+.code-icon{
+  color:#857b7b;
+  margin-right:8px;
+  font-weight:700;
+  font-size: 2rem;
+}
+.logo-main{
+  font-size: 2rem;
+}
+
+.slide .card {
+  animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card{
+  box-shadow: 0 12px 30px rgba(106, 13, 173, 0.10) !important;
+}
+

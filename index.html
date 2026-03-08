@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Slides PHP</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+
+
+</head>
+<body>
+  <header class="my-header">
+  <div class="header-content">
+<div class="logo-dev">
+  <span class="code-icon">&lt;/&gt;</span>
+  <span class="logo-main">Z.A</span>
+</div>
+</header>
+
+  <main>
+<section class="slide d-none" id="s_intro">
+  <div class="card border shadow-sm rounded-4 p-4 p-md-5 text-center">
+    <div class="card-body">
+
+      <!-- Titre -->
+      <h1 class="fw-bold mb-3 display-5">Les fonctions d’agrégation en SQL</h1>
+      
+      <!-- Phrase -->
+      <p class="text-secondary mb-4 fs-5">
+        Transformer les données en information grâce à SQL
+      </p>
+
+      <!-- Ligne décorative -->
+      <hr style="width:60%; margin:auto;" class="mb-4">
+
+      
+      <p class="mb-1 fs-5"><strong>Réalisé par</strong></p>
+      <p class="mb-4 fs-5">
+        👩‍💻 Zineb Abounnaim <br>
+        👩‍💻 Douae Ramram
+      </p>
+
+      <!-- Encadré -->
+      <p class="mb-1 fs-5"><strong>Encadré par</strong></p>
+      <p class="mb-4 fs-5">👩‍🏫 Mme Zohari</p>
+
+      <!-- Filière -->
+      <p class="mb-1 fs-5"><strong>Filière</strong></p>
+      <p class="mb-4 fs-5">🎓 Développement Digital</p>
+
+      <!-- Établissement -->
+      <p class="mb-1 fs-5"><strong>Établissement</strong></p>
+      <p class="mb-4 fs-5">🏫 OFPPT</p>
+
+      <!-- Année -->
+      <p class="mb-1 fs-5"><strong>Année académique</strong></p>
+      <p class="fs-5">📅 2025 / 2026</p>
+
+    </div>
+  </div>
+</section>    
+<section class="slide d-none" id="s_intro_agreg">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">Les fonctions d’agrégation et les instructions SQL associées</h1>
+
+      <p class="text-secondary mb-4">
+        Les fonctions d’agrégation permettent d’effectuer un calcul sur plusieurs
+        lignes d’une table et de retourner une seule valeur comme résultat.
+        Elles sont utilisées pour analyser et résumer les données.
+      </p>
+
+      <div class="row g-4">
+
+        <!-- Box Fonctions -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">Fonctions d’agrégation</h3>
+
+            <ul class="mb-0">
+              <li><strong>SUM()</strong> : calculer la somme</li>
+              <li><strong>AVG()</strong> : calculer la moyenne</li>
+              <li><strong>MIN()</strong> : trouver la valeur minimale</li>
+              <li><strong>MAX()</strong> : trouver la valeur maximale</li>
+              <li><strong>COUNT()</strong> : compter les enregistrements</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Box Instructions -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">Instructions SQL associées</h3>
+
+            <ul class="mb-0">
+              <li><strong>GROUP BY</strong> : regrouper les lignes selon une colonne</li>
+              <li><strong>HAVING</strong> : filtrer les groupes créés par GROUP BY</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Résumé -->
+      <div class="mt-4 p-3 rounded-4 border bg-light">
+        <h3 class="h6 fw-bold mb-2">Ce que nous avons appris</h3>
+
+        <ul class="mb-0">
+          <li>Les fonctions d’agrégation permettent de résumer les données.</li>
+          <li>Elles retournent une seule valeur à partir de plusieurs lignes.</li>
+          <li>Les instructions GROUP BY et HAVING permettent d’organiser et filtrer les résultats.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <section class="slide d-none" id="s_min">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction MIN()</h1>
+      <p class="text-secondary mb-4">
+        MIN() est une fonction d’agrégation en SQL qui permet de retourner
+        la plus petite valeur d’une colonne dans une table.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li>MIN() est une fonction d’agrégation.</li>
+              <li>Elle retourne la plus petite valeur d’une colonne.</li>
+              <li>Elle peut être utilisée avec des nombres, des dates ou du texte.</li>
+              <li>Les valeurs NULL ne sont pas prises en compte.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Trouver le salaire minimum des employés.</li>
+              <li>Afficher la date la plus ancienne d’un projet.</li>
+              <li>Trouver la première valeur alphabétique dans une colonne texte.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT MIN(nom_colonne)
+FROM nom_table;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Afficher le plus petit salaire des développeurs.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT MIN(Salaire)
+FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NomDev</th>
+                  <th>Salaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Sara</td>
+                  <td>7000</td>
+                </tr>
+                <tr>
+                  <td>Amine</td>
+                  <td>8000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : MIN(Salaire) = 5000
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="slide d-none" id="s_max">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction MAX()</h1>
+      <p class="text-secondary mb-4">
+        MAX() est une fonction d’agrégation en SQL qui permet de retourner
+        la plus grande valeur d’une colonne dans une table.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li>MAX() est une fonction d’agrégation.</li>
+              <li>Elle retourne la plus grande valeur d’une colonne.</li>
+              <li>Elle peut être utilisée avec des nombres, des dates ou du texte.</li>
+              <li>Les valeurs NULL ne sont pas prises en compte.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Trouver le salaire maximum des employés.</li>
+              <li>Afficher la date la plus récente d’un projet.</li>
+              <li>Trouver la dernière valeur selon l’ordre alphabétique.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT MAX(nom_colonne)
+FROM nom_table;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Afficher le salaire le plus élevé des développeurs.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT MAX(Salaire)
+FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NomDev</th>
+                  <th>Salaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Sara</td>
+                  <td>7000</td>
+                </tr>
+                <tr>
+                  <td>Amine</td>
+                  <td>8000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : MAX(Salaire) = 8000
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="slide d-none" id="s_count">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction COUNT()</h1>
+      <p class="text-secondary mb-4">
+        COUNT() permet de compter le nombre d’enregistrements dans une table.
+        Elle possède plusieurs variantes selon le type de comptage.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- LEFT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li><strong>COUNT(*)</strong> : compte toutes les lignes.</li>
+              <li><strong>COUNT(colonne)</strong> : compte les valeurs non NULL.</li>
+              <li><strong>COUNT(DISTINCT colonne)</strong> : compte les valeurs différentes.</li>
+              <li>Les valeurs NULL ne sont pas comptées avec COUNT(colonne).</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Compter le nombre d’employés dans une table.</li>
+              <li>Compter les valeurs uniques d’une colonne.</li>
+              <li>Analyser des données avec doublons.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>
+SELECT COUNT(*) FROM table;
+
+SELECT COUNT(colonne) FROM table;
+
+SELECT COUNT(DISTINCT colonne) FROM table;
+</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple</h3>
+
+            <p class="small text-secondary mb-3">
+              Exemple avec valeurs répétées et NULL.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT COUNT(*) FROM developpeur;
+SELECT COUNT(NomDev) FROM developpeur;
+SELECT COUNT(DISTINCT NomDev) FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NumDev</th>
+                  <th>NomDev</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Ali</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Sara</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Sara</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>NULL</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              COUNT(*) = 4
+            </p>
+
+            <p class="fw-bold text-success">
+              COUNT(NomDev) = 3
+            </p>
+
+            <p class="fw-bold text-success">
+              COUNT(DISTINCT NomDev) = 2
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="slide d-none" id="s_sum">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction SUM()</h1>
+      <p class="text-secondary mb-4">
+        SUM() calcule la somme des valeurs d’une colonne.
+        SUM(DISTINCT) calcule la somme des valeurs différentes en ignorant les doublons.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- LEFT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li><strong>SUM()</strong> calcule la somme de toutes les valeurs.</li>
+              <li><strong>SUM(DISTINCT)</strong> calcule la somme des valeurs uniques.</li>
+              <li>SUM(DISTINCT) ignore les doublons.</li>
+              <li>Les valeurs NULL ne sont pas prises en compte.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Calculer le total des salaires.</li>
+              <li>Éviter de compter les valeurs répétées.</li>
+              <li>Analyser des données contenant des doublons.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>
+SELECT SUM(colonne)
+FROM table;
+
+SELECT SUM(DISTINCT colonne)
+FROM table;
+</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple</h3>
+
+            <p class="small text-secondary mb-3">
+              Exemple avec des valeurs répétées.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT SUM(Salaire) FROM developpeur;
+
+SELECT SUM(DISTINCT Salaire) FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NomDev</th>
+                  <th>Salaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Sara</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Amine</td>
+                  <td>8000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat SUM : 5000 + 5000 + 8000 = 18000
+            </p>
+
+            <p class="fw-bold text-success">
+              Résultat SUM(DISTINCT) : 5000 + 8000 = 13000
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="slide d-none" id="s_avg">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction AVG()</h1>
+      <p class="text-secondary mb-4">
+        AVG() est une fonction d’agrégation en SQL qui permet de calculer
+        la moyenne des valeurs d’une colonne numérique dans une table.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li>AVG() est une fonction d’agrégation.</li>
+              <li>Elle calcule la moyenne des valeurs d’une colonne.</li>
+              <li>Elle fonctionne avec des données numériques.</li>
+              <li>Les valeurs NULL ne sont pas prises en compte.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Calculer le salaire moyen des employés.</li>
+              <li>Analyser la moyenne des ventes d’un produit.</li>
+              <li>Calculer la moyenne des notes d’étudiants.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT AVG(nom_colonne)
+FROM nom_table;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Calculer le salaire moyen des développeurs.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT AVG(Salaire)
+FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NomDev</th>
+                  <th>Salaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Sara</td>
+                  <td>7000</td>
+                </tr>
+                <tr>
+                  <td>Amine</td>
+                  <td>8000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : AVG(Salaire) = 6666.67
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="slide d-none" id="s_group_concat">
+  <div class="card border shadow-sm rounded-4 p-2 p-md-3">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">La fonction GROUP_CONCAT()</h1>
+      <p class="text-secondary mb-4">
+        GROUP_CONCAT() est une fonction d’agrégation en SQL qui permet
+        de regrouper plusieurs valeurs d’une colonne en une seule chaîne de texte.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+
+            <ul class="mb-3">
+              <li>GROUP_CONCAT() est une fonction d’agrégation.</li>
+              <li>Elle combine plusieurs valeurs dans une seule chaîne.</li>
+              <li>Les valeurs sont séparées par une virgule par défaut.</li>
+              <li>Elle est souvent utilisée avec GROUP BY.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Afficher plusieurs noms dans une seule cellule.</li>
+              <li>Regrouper les développeurs d’un même projet.</li>
+              <li>Afficher les produits d’une commande.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT GROUP_CONCAT(nom_colonne)
+FROM nom_table;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Afficher tous les noms des développeurs dans une seule ligne.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT GROUP_CONCAT(NomDev)
+FROM developpeur;
+--Exemple avec SEPARATOR
+SELECT GROUP_CONCAT(NomDev SEPARATOR ' | ')
+FROM developpeur;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>NomDev</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali</td>
+                </tr>
+                <tr>
+                  <td>Sara</td>
+                </tr>
+                <tr>
+                  <td>Amine</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : Ali, Sara, Amine  //  Résultat : Ali | Sara | Amine
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="slide d-none" id="s_groupby">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">GROUP BY</h1>
+      <p class="text-secondary mb-4">
+        GROUP BY est une instruction SQL qui permet de regrouper les lignes d’une table
+        selon une ou plusieurs colonnes.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+            <ul class="mb-3">
+              <li>GROUP BY regroupe les lignes ayant la même valeur.</li>
+              <li>Chaque valeur crée un groupe.</li>
+              <li>Elle est souvent utilisée avec les fonctions d’agrégation.</li>
+              <li>Elle permet d’analyser les données par catégorie.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Fonctions utilisées</h4>
+            <ul class="mb-3">
+              <li>COUNT()</li>
+              <li>SUM()</li>
+              <li>AVG()</li>
+              <li>MAX()</li>
+              <li>MIN()</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT colonne, fonction(colonne)
+FROM table
+GROUP BY colonne;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Nombre de développeurs par ville.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT ville, COUNT(*)
+FROM developpeur
+GROUP BY ville;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>Ville</th>
+                  <th>NomDev</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fes</td>
+                  <td>Ali</td>
+                </tr>
+                <tr>
+                  <td>Fes</td>
+                  <td>Sara</td>
+                </tr>
+                <tr>
+                  <td>Casa</td>
+                  <td>Amine</td>
+                </tr>
+                <tr>
+                  <td>Casa</td>
+                  <td>Omar</td>
+                </tr>
+                <tr>
+                  <td>Rabat</td>
+                  <td>Yassine</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : Fes → 2 | Casa → 2 | Rabat → 1
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="slide d-none" id="s_having">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">HAVING</h1>
+      <p class="text-secondary mb-4">
+        HAVING est une clause SQL utilisée pour filtrer les groupes
+        après l’utilisation de GROUP BY.
+      </p>
+
+      <div class="row g-4">
+        
+        <!-- Infos -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">À retenir</h3>
+            <ul class="mb-3">
+              <li>HAVING filtre les groupes créés par GROUP BY.</li>
+              <li>Elle est utilisée avec les fonctions d’agrégation.</li>
+              <li>Elle s’exécute après GROUP BY.</li>
+              <li>Elle permet de garder seulement les groupes qui respectent une condition.</li>
+            </ul>
+
+            <h4 class="h6 fw-bold mt-3 mb-2">Cas d’utilisation</h4>
+            <ul class="mb-3">
+              <li>Afficher les villes ayant plus de développeurs.</li>
+              <li>Filtrer les groupes selon une moyenne ou une somme.</li>
+              <li>Analyser les résultats d’un GROUP BY.</li>
+            </ul>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Syntaxe</h4>
+<pre class="m-0"><code>SELECT colonne, fonction(colonne)
+FROM table
+GROUP BY colonne
+HAVING condition;</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Exemple -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Exemple simple</h3>
+
+            <p class="small text-secondary mb-3">
+              Afficher les villes ayant plus de 1 développeur.
+            </p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>
+SELECT ville, COUNT(*)
+FROM developpeur
+GROUP BY ville
+HAVING COUNT(*) > 1;
+</code></pre>
+            </div>
+
+            <table class="table table-sm table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>Ville</th>
+                  <th>NomDev</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fes</td>
+                  <td>Ali</td>
+                </tr>
+                <tr>
+                  <td>Fes</td>
+                  <td>Sara</td>
+                </tr>
+                <tr>
+                  <td>Casa</td>
+                  <td>Amine</td>
+                </tr>
+                <tr>
+                  <td>Casa</td>
+                  <td>Omar</td>
+                </tr>
+                <tr>
+                  <td>Rabat</td>
+                  <td>Yassine</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fw-bold text-success">
+              Résultat : Fes → 2 | Casa → 2
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="slide d-none" id="s_sql_execution">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body">
+
+      <h1 class="fw-bold mb-2">Ordre d’exécution et rôle de HAVING</h1>
+
+      <p class="text-secondary mb-4">
+        Comprendre l’ordre d’exécution SQL permet de savoir pourquoi HAVING
+        est utilisé après GROUP BY.
+      </p>
+
+      <div class="row g-4">
+
+        <!-- LEFT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Ordre d’exécution</h3>
+
+            <ol class="mb-3">
+              <li>FROM</li>
+              <li>WHERE</li>
+              <li>GROUP BY</li>
+              <li>HAVING</li>
+              <li>SELECT</li>
+              <li>ORDER BY</li>
+            </ol>
+
+            <div class="mt-4 p-3 rounded-4 border bg-light">
+              <h4 class="h6 fw-bold mb-2">Remarque</h4>
+              <ul class="mb-0">
+                <li>WHERE s’exécute avant GROUP BY</li>
+                <li>HAVING s’exécute après GROUP BY</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-12 col-md-6">
+          <div class="p-3 rounded-4 border h-100">
+
+            <h3 class="h5 fw-bold mb-3">Pourquoi pas WHERE ?</h3>
+
+            <p class="small fw-bold text-danger mb-2">❌ Requête incorrecte</p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0"><code>SELECT ville, COUNT(*)
+FROM developpeur
+WHERE COUNT(*) > 1
+GROUP BY ville;
+</code></pre>
+            </div>
+
+            <p class="small fw-bold text-success mb-2">✅ Requête correcte</p>
+
+            <div class="p-3 rounded-4 bg-light border mb-3">
+<pre class="m-0">
+<code>SELECT ville, COUNT(*)
+FROM developpeur
+GROUP BY ville
+HAVING COUNT(*) > 1;</code></pre>
+            </div>
+
+            <div class="p-3 rounded-4 border bg-light">
+              <strong>Explication :</strong><br>
+              WHERE ne peut pas utiliser COUNT() car COUNT() est calculé
+              après GROUP BY.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="slide d-none" id="s_thank_you">
+  <div class="card border shadow-sm rounded-4 p-3 p-md-4">
+    <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+
+      <h1 class="fw-bold mb-3">Merci pour votre attention !</h1>
+
+      <p class="text-secondary mb-3 fs-5">
+        Si vous avez des questions…<br>nous sommes prêtes à les
+      </p>
+
+      <div class="p-3 rounded-4 bg-light border mb-4">
+        <pre class="m-0"><code>SELECT * FROM class;</code></pre>
+      </div>
+
+      <p class="mb-4 fs-6 text-muted">
+        Nous vous souhaitons une bonne continuation.
+      </p>
+
+      <div class="mt-4">
+        <p class="mb-1 fw-semibold">Présenté par :</p>
+        <p class="mb-1">Zineb Abounnaim</p>
+        <p class="mb-3">Douae Ramram</p>
+
+        <p class="mb-1 fw-semibold">Encadré par :</p>
+        <p class="mb-0">Mme Zohari</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  </main>
+<footer class="controls">
+  <button id="prev" class="btn btn-outline-secondary">← Précédent</button>
+
+  <span id="counter">1 / 5</span>
+
+  <button id="next" class="btn btn-primary">Suivant →</button>
+</footer>
+<script>
+const slides = document.querySelectorAll('.slide');
+let index = 0;
+
+const counter = document.getElementById('counter');
+
+function showSlide(i){
+  slides.forEach(slide => slide.classList.add('d-none'));
+  slides[i].classList.remove('d-none');
+  counter.textContent = `${i+1} / ${slides.length}`;
+}
+
+document.getElementById('next').onclick = () => {
+  if(index < slides.length - 1){
+    index++;
+    showSlide(index);
+  }
+};
+
+document.getElementById('prev').onclick = () => {
+  if(index > 0){
+    index--;
+    showSlide(index);
+  }
+};
+
+// clavier
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowRight') document.getElementById('next').click();
+  if(e.key === 'ArrowLeft') document.getElementById('prev').click();
+});
+
+// initialisation
+showSlide(index);
+</script>
+
+</body>
+</html>
